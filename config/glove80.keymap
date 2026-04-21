@@ -104,12 +104,12 @@
 
         symbols {
             bindings = <
-&none   &none     &none      &none      &none                                                                      &none   &none  &none  &none  &none
-&none   &none     &none      &none      &trans  &trans                                                     &trans  &trans  &none  &none  &none  &none
-&trans  &kp APOS  &kp U      &kp O      &kp F   &kp Y                                                      &kp B   &kp M   &kp D  &kp L  &kp Q  &trans
-&trans  &kp A     &kp I      &kp E      &kp N   &kp P                                                      &kp G   &kp C   &kp T  &kp R  &kp S  &trans
-&trans  &kp DOT   &kp COMMA  &kp MINUS  &kp H   &kp J   &none   &none   &layer_td  &none   &none   &none   &kp V   &kp W   &kp K  &kp X  &kp Z  &trans
-&none   &none     &none      &none      &none           &trans  &trans  &trans     &trans  &trans  &trans          &none   &none  &none  &none  &trans
+&none        &none                 &none             &none                    &none                                                                                                   &none         &none         &none                &none        &none
+&none        &none                 &none             &none                    &trans                    &trans                                                        &trans          &trans        &none         &none                &none        &none
+&trans       &kp APOS              &kp DE_DOLLAR     &kp LBRC                 &kp RBRC                  &kp LCTRL                                                     &kp PIPE        &kp MINUS     &kp LT        &kp DE_GREATER_THAN  &kp GRAVE    &trans
+&kp BSLH     &kp DE_DOUBLE_QUOTES  &kp DE_SEMICOLON  &kp DE_LEFT_PARENTHESIS  &kp DE_RIGHT_PARENTHESIS  &kp POUND                                                     &kp DE_AMPS     &kp DE_EQUAL  &kp DE_SLASH  &kp STAR             &kp DE_EXCL  &kp DE_QMARK
+&kp DE_EURO  &kp DOT               &kp COMMA         &kp DE_UNDERSCORE        &kp DE_COLON              &kp DE_AT  &none   &none   &layer_td  &none   &none   &none   &kp DE_PERCENT  &kp LBKT      &kp RBKT      &kp PLUS             &kp TILDE    &kp DE_DEG
+&none        &none                 &none             &none                    &none                                &trans  &trans  &trans     &trans  &trans  &trans                  &none         &none         &none                &none        &trans
             >;
         };
 
