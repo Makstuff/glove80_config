@@ -41,6 +41,38 @@
             tapping-term-ms = <200>;
             bindings = <&mo>, <&rgb_ug_status_macro>;
         };
+    l_layer_ctrl: l_layer_ctrl {
+        compatible = "zmk,behavior-hold-tap";
+        #binding-cells = <2>;
+        flavor = "tap-unless-interrupted";
+        tapping-term-ms = <999999>; // Eliminates the timer-based auto-hold
+        bindings = <&mo_ctrl>, <&sl>;
+    };
+
+    comma: comma {
+        compatible = "zmk,behavior-mod-morph";
+        #binding-cells = <0>;
+        bindings = <&kp COMMA>, <&kp PERIOD>;  
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+        keep-mods = <(MOD_LSFT|MOD_RSFT)>; /* Prevents Shift from dropping */
+    };
+
+    period: period {
+        compatible = "zmk,behavior-mod-morph";
+        #binding-cells = <0>;
+        bindings = <&kp PERIOD>, <&kp NUHS>; /* Outputs . and ' */
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+        keep-mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+
+
+    minus: minus {
+        compatible = "zmk,behavior-mod-morph";
+        #binding-cells = <0>;
+        bindings = <&kp FSLH>, <&kp N2>;    /* Outputs - and " */
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+        keep-mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
     };
 
     macros {
@@ -78,7 +110,22 @@
             #binding-cells = <0>;
             bindings = <&out OUT_BLE &bt BT_SEL 3>;
         };
+
+        mo_ctrl: mo_ctrl {
+            compatible = "zmk,behavior-macro-one-param";
+            wait-ms = <0>;  // Eliminates delay between macro steps
+            tap-ms = <0>;   // Eliminates tap delays
+            #binding-cells = <1>;
+            bindings = <&macro_param_1to1>,
+                   <&macro_press &mo MACRO_PLACEHOLDER>,
+                   <&macro_press &kp LCTRL>,
+                   <&macro_pause_for_release>,
+                   <&macro_release &kp LCTRL>,
+                   <&macro_param_1to1>,
+                   <&macro_release &mo MACRO_PLACEHOLDER>;
+        };
     };
+
 
     keymap {
         compatible = "zmk,keymap";
