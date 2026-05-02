@@ -394,7 +394,7 @@
 #define DE_CAPITAL_ESZETT (DE_CAPITAL_SHARP_S)
 #define DE_CAPITAL_SZ (DE_CAPITAL_SHARP_S)
 
-/* Ä */
+/* uo */
 #define DE_A_UMLAUT                                                            \
   (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_APOSTROPHE_AND_QUOTE))
 
